@@ -5,7 +5,6 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-        $data['result'] = $this->auth->getAll();
-		$this->load->view('index', $data);
+
 	}
 }

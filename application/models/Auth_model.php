@@ -5,7 +5,28 @@ class Auth_model extends CI_Model {
     public $content;
     public $date;
 
+    function __construct()
+    {
+        parent::__construct();
+        $this->a = "users";
+    }
+ 
+    function cek_user($username="",$password="")
+    {
+        $query = $this->db->get_where($this->a,array('username' => $username, 'password' => $password));
+        $query = $query->result_array();
+        //var_dump($query);die();
+        return $query;
+    }
 
+    function ambil_user($username)
+    {
+        $query = $this->db->get_where($this->a, array('username' => $username));
+        $query = $query->result_array();
+        if($query){
+            return $query[0];
+        }
+    }
     public function getAll ()
     {
 
@@ -36,6 +57,8 @@ class Auth_model extends CI_Model {
 
         $this->db->update('entries', $this, array('id' => $_POST['id']));
     }
+
+
 
 }
 ?>
