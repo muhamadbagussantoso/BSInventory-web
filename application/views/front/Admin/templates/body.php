@@ -15,7 +15,7 @@
 						<li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-hdd"></i><span> Pengelolaan</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li ><a href="<?php echo base_url('Goods');?>" class="glyphicon glyphicon-briefcase"> Barang </a></li>
+                                <li class="<?php echo $goods;?>"><a href="<?php echo base_url('Goods');?>" class="glyphicon glyphicon-briefcase"> Barang </a></li>
                                 <li><a href="#" class="glyphicon glyphicon-file"> Invoice</a></li>
                             </ul>
                         </li>
@@ -56,8 +56,13 @@
 					<li>
 						<a href="#"><?php echo $modules;?></a>
 					</li>
-					<li>
-						<a href="#"><?php echo $page ;?></a>
-					</li>
+                    <li>
+                        <a href="#"><?php echo $page ;?></a>
+                    </li>
+                    <li>
+                        <a href="#"><?php $link = $_SERVER['PHP_SELF'];
+                                          $link_array = explode('/',$link);
+                                          echo $page = end($link_array); ?></a>
+                    </li>
 				</ul>
 			</div>

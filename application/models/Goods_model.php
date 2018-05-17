@@ -44,6 +44,14 @@ class Goods_model extends CI_Model {
         $this->db->update('entries', $this, array('id' => $_POST['id']));
     }
 
+    public function saveGoods ($data)   
+    {
+        if ($data != null){
+        $sql ="INSERT INTO {$this->table} (name) values('{$data["name"]}')";
+        // var_dump($sql);die();
+        $query = $this->db->query($sql) ;
+        }
+    }
 
 
 }

@@ -33,6 +33,15 @@ class Template
            
            $this->_ci->load->view('index',$data);
         }
+        function goodsDetail($templates,$data = null)
+        {
+           for ($i = 0; $i <= 3; $i++){
+                $this->data = $data[$this->fileTemplates[$i]] = $this->_ci->load->view($this->adminTemplate."/".$this->fileTemplates[$i],$data,true);
+                };
+           $data['contens'] = $this->_ci->load->view($this->adminDir."/manage/goods/detail",$data,true);
+           
+           $this->_ci->load->view('index',$data);
+        }
         
         
     }

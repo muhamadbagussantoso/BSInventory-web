@@ -17,6 +17,7 @@ class Goods extends CI_Controller{
 			'auth' => $this->afterAuth,
 			'goodsData' => $GetGoods,
 			'css' => 'goods.css',
+			'goods' => 'active',
 			);
 
 		$this->role = $this->session->userdata('role');
@@ -24,6 +25,7 @@ class Goods extends CI_Controller{
 	}
 	function index()
 	{
+
 		if($this->role == 1){
 			$this->template->goods('goods',$this->data);
 		}else{ //user
@@ -33,9 +35,27 @@ class Goods extends CI_Controller{
 
 	function detail()
 	{
+ 
+
 		if($this->role == 1){
-			$this->template->goods('goods',$this->data);
+			$this->template->goodsDetail('goodsDetail',$this->data);
 		}else{ //user
+			$this->load->view('front/User/dashboard_user',$this->data);
+		}
+	}
+
+	function saveGood (){
+		if($this->role == 1){
+			
+				// $header = $this->input->post('header');
+				$header['name'] = $_POST['name'];
+				alert($header);die();
+					// allFields = $( [] ).add( name ).add( supplier ).add( category ).add( qty ).add( price ).add( price1 );
+				// 
+				$saveHeaderStaff = $this->Goods->saveGoods($header);
+				redirect('index.php/Position/position');
+			
+		}else{
 			$this->load->view('front/User/dashboard_user',$this->data);
 		}
 	}
