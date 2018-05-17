@@ -17,6 +17,7 @@
                             <th>Qty</th>
                             <th>Price </th>
                             <th>Price 1</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,6 +29,18 @@
 								<td><?php echo $goods->qty; ?></td>
 								<td><?php echo 'Rp'.$goods->price; ?></td>
 								<td><?php echo 'Rp'.$goods->price1; ?></td>
+								<td>
+                                    <button class="btn-action" data-tooltip title="Detail">
+                                          <a href="<?php echo base_url('Goods/detail');?>" class='action-list glyphicon glyphicon-eye-open'></a>
+                                    </button>
+                                    <button class="btn-action" data-tooltip title="Edit">
+                                         <a href="" class='action-list glyphicon glyphicon-edit'></a>
+                                    </button>
+                                    <button class="btn-action" data-tooltip title="Remove">
+                                          <a href="" class='action-list glyphicon glyphicon-trash'></a>
+                                    </button>
+                                      
+                                </td>
 			            	</tr>
 						<?php  endforeach?>
                     </tbody>

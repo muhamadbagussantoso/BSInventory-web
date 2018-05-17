@@ -4,15 +4,12 @@ class Goods extends CI_Controller{
 		parent::__construct();
 		$this->auth->cek_auth(); //ngambil auth dari library
 		$this->afterAuth = $this->session->userdata('logged_in');
-	}
-	function index()
-	{
-		
+
 		$getAccount = $this->ModelAuth->ambil_user($this->session->userdata('uname'));
 		$GetGoods = $this->Goods->getAll();
 
 		$titleHeader = 'Beranda | BSInventory';
-		$data = array(	
+		$this->data = array(	
 			'user'	=> $getAccount,
 			'title' => $titleHeader,
 			'modules'=> 'Barang',
@@ -22,13 +19,25 @@ class Goods extends CI_Controller{
 			'css' => 'goods.css',
 			);
 
-		$role = $this->session->userdata('role');
-		//var_dump($data);die();
-		if($role == 1){//admin
-			$this->template->goods('goods',$data);
-		}else{ //user
-			$this->load->view('front/User/dashboard_user',$data);
-		}
-		
+		$this->role = $this->session->userdata('role');
+
 	}
+	function index()
+	{
+		if($this->role == 1){
+			$this->template->goods('goods',$this->data);
+		}else{ //user
+			$this->load->view('front/User/dashboard_user',$this->data);
+		}
+	}
+
+	function detail()
+	{
+		if($this->role == 1){
+			$this->template->goods('goods',$this->data);
+		}else{ //user
+			$this->load->view('front/User/dashboard_user',$this->data);
+		}
+	}
+
 }

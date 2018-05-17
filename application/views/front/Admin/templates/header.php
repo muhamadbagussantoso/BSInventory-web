@@ -34,6 +34,7 @@
 	<style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/charisma/css/uploadify.css')?>")</style>
     <style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/charisma/css/animate.min.css')?>")</style>
     <style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/custom/css/goods.css')?>")</style>
+    <style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/css/global.css')?>")</style>
 
 </head>
 <body>
