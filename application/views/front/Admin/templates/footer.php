@@ -6,9 +6,6 @@
 
     <footer class="row">
         <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; Muhamad Bagus Santoso</p>
-
-        <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Template : <a
-                href="http://usman.it/free-responsive-admin-template">Charisma</a></p>
     </footer>
 
 </div><!--/.fluid-container-->

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,oBAAqB;EACjB,KAAK,EAAE,KAAK",
+"sources": ["../sass/goods.scss"],
+"names": [],
+"file": "goods.css"
+}

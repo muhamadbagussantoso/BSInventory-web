@@ -15,9 +15,8 @@
 						<li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-hdd"></i><span> Pengelolaan</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li ><a href="<?php echo base_url('Staff');?>" class="glyphicon glyphicon-user"> aa</a></li>
-                                <li><a href="#" class="glyphicon glyphicon-list-alt"> Permintaan</a></li>
-                                <li><a href="<?php echo base_url('Report');?>" class="glyphicon glyphicon-book"> Laporan</a></li>
+                                <li ><a href="<?php echo base_url('Goods');?>" class="glyphicon glyphicon-briefcase"> Barang </a></li>
+                                <li><a href="#" class="glyphicon glyphicon-file"> Invoice</a></li>
                             </ul>
                         </li>
 						<li class="accordion">
@@ -29,8 +28,8 @@
                         </li>
 						<li class="accordion"><a class="ajax-link" href="<?php echo base_url('Report');?>"><i class="glyphicon glyphicon-book"></i><span> Laporan</span></a>
 							<ul class="nav nav-pills nav-stacked">
-                                <li ><a href="<?php echo base_url('Report/attendance');?>" class="glyphicon glyphicon-user"> Absensi</a></li>
-                                <li><a href="#" class="glyphicon glyphicon-list-alt"> Permintaan</a></li>
+                                <li ><a href="#" class="glyphicon glyphicon-briefcase"> Barang </a></li>
+                                <li><a href="#" class="glyphicon glyphicon-file"> Invoice</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -24,27 +24,27 @@ date_default_timezone_set('Asia/Jakarta');?>
     <meta name="author" content="Muhammad Usman">
 
     <!-- The styles -->
-    <link id="bs-css" href="assets/charisma-master/css/bootstrap-cerulean.min.css" rel="stylesheet">
+    <link id="bs-css" href="assets/charisma/css/bootstrap-cerulean.min.css" rel="stylesheet">
 
-    <link href="assets/charisma-master/css/charisma-app.css" rel="stylesheet">
-    <link href='assets/charisma-master/bower_components/fullcalendar/dist/fullcalendar.css' rel='stylesheet'>
-    <link href='assets/charisma-master/bower_components/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print'>
-    <link href='assets/charisma-master/bower_components/chosen/chosen.min.css' rel='stylesheet'>
-    <link href='assets/charisma-master/bower_components/colorbox/example3/colorbox.css' rel='stylesheet'>
-    <link href='assets/charisma-master/bower_components/responsive-tables/responsive-tables.css' rel='stylesheet'>
-    <link href='assets/charisma-master/bower_components/bootstrap-tour/build/css/bootstrap-tour.min.css' rel='stylesheet'>
-    <link href='assets/charisma-master/css/jquery.noty.css' rel='stylesheet'>
-    <link href='assets/charisma-master/css/noty_theme_default.css' rel='stylesheet'>
-    <link href='assets/charisma-master/css/elfinder.min.css' rel='stylesheet'>
-    <link href='assets/charisma-master/css/elfinder.theme.css' rel='stylesheet'>
-    <link href='assets/charisma-master/css/jquery.iphone.toggle.css' rel='stylesheet'>
-    <link href='assets/charisma-master/css/uploadify.css' rel='stylesheet'>
-    <link href='assets/charisma-master/css/animate.min.css' rel='stylesheet'>
+    <link href="assets/charisma/css/charisma-app.css" rel="stylesheet">
+    <link href='assets/charisma/bower_components/fullcalendar/dist/fullcalendar.css' rel='stylesheet'>
+    <link href='assets/charisma/bower_components/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print'>
+    <link href='assets/charisma/bower_components/chosen/chosen.min.css' rel='stylesheet'>
+    <link href='assets/charisma/bower_components/colorbox/example3/colorbox.css' rel='stylesheet'>
+    <link href='assets/charisma/bower_components/responsive-tables/responsive-tables.css' rel='stylesheet'>
+    <link href='assets/charisma/bower_components/bootstrap-tour/build/css/bootstrap-tour.min.css' rel='stylesheet'>
+    <link href='assets/charisma/css/jquery.noty.css' rel='stylesheet'>
+    <link href='assets/charisma/css/noty_theme_default.css' rel='stylesheet'>
+    <link href='assets/charisma/css/elfinder.min.css' rel='stylesheet'>
+    <link href='assets/charisma/css/elfinder.theme.css' rel='stylesheet'>
+    <link href='assets/charisma/css/jquery.iphone.toggle.css' rel='stylesheet'>
+    <link href='assets/charisma/css/uploadify.css' rel='stylesheet'>
+    <link href='assets/charisma/css/animate.min.css' rel='stylesheet'>
 
     <!-- jQuery -->
-    <!-- <script src="assets/charisma-master/bower_components/jquery/jquery.min.js"></script> -->
+    <!-- <script src="assets/charisma/bower_components/jquery/jquery.min.js"></script> -->
     
-    <script src="assets/charisma-master/bower_components/jquery/jquery.min.js"></script>
+    <script src="assets/charisma/bower_components/jquery/jquery.min.js"></script>
 
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -52,6 +52,6 @@ date_default_timezone_set('Asia/Jakarta');?>
     <![endif]-->
 
     <!-- The fav icon -->
-    <link rel="shortcut icon" href="assets/charisma-master/img/favicon.ico">
+    <link rel="shortcut icon" href="assets/charisma/img/favicon.ico">
 
 </head>
