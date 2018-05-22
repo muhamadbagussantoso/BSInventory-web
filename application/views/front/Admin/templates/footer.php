@@ -17,7 +17,7 @@
 	<script src="<?php echo base_url('assets/charisma/bower_components/moment/min/moment.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/charisma/bower_components/fullcalendar/dist/fullcalendar.min.js') ?>"></script>
 	<!-- data table plugin -->
-	<script src="<?php echo base_url('assets/charisma/js/jquery.dataTables.min.js') ?>"></script>
+	<script src="<?php echo base_url('assets/dataTables/jquery.dataTables.min.js') ?>"></script>
 
 	<!-- select or dropdown enhancer -->
 	<script src="<?php echo base_url('assets/charisma/bower_components/chosen/chosen.jquery.min.js') ?>"></script>

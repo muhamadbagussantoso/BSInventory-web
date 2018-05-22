@@ -26,13 +26,9 @@ class Goods_model extends CI_Model {
         return $query->result();
     }
 
-    public function insert_entry()
+    public function insertGoods($data)
     {
-        $this->title    = $_POST['title']; // please read the below note
-        $this->content  = $_POST['content'];
-        $this->date     = time();
-
-        $this->db->insert('entries', $this);
+         $this->db->insert('goods', $data);
     }
 
     public function update_entry()

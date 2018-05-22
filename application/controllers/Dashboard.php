@@ -4,26 +4,31 @@ class Dashboard extends CI_Controller{
 		parent::__construct();
 		$this->auth->cek_auth(); //ngambil auth dari library
 		$this->afterAuth = $this->session->userdata('logged_in');
-	}
-	function index()
-	{
-		
-		$ambil_akun = $this->ModelAuth->ambil_user($this->session->userdata('uname'));
+
+		$getAccount = $this->ModelAuth->ambil_user($this->session->userdata('uname'));
+		$GetGoods = $this->Goods->getAll();
 
 		$titleHeader = 'Beranda | BSInventory';
-		$data = array(	
-			'user'	=> $ambil_akun,
+		$this->data = array(	
+			'user'	=> $getAccount,
 			'title' => $titleHeader,
 			'modules'=> 'Dashboard',
 			'page' => '',
 			'auth' => $this->afterAuth,
+			'css' => 'goods.css',
+			'goods' => '',
 			);
+
+		$this->role = $this->session->userdata('role');
+	}
+	function index()
+	{
 
 		$role = $this->session->userdata('role');
 		if($role == 1){
-			$this->template->display('display',$data);
+			$this->template->display('display',$this->data);
 		}else{
-			$this->load->view('front/User/dashboard_user',$data);
+			$this->load->view('front/User/dashboard_user',$this->data);
 		}
 		
 	}
