@@ -53,7 +53,7 @@ $alphablack:rgba(0,0,0,0.9);
     }
   }
 }
-button.btn-action {
+.btn-action {
     text-align: center;
     background: none;
     border: none;
@@ -61,6 +61,26 @@ button.btn-action {
     padding: initial;
 }
 
-button.btn.btn-default {
-  margin-left: 15px;
+.glyphicon {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+button, input, optgroup, select, textarea{
+  padding: 5px;
+}
+div#goodsData_filter {
+    float: right;
+}
+td.details-control {
+    background: url('../images/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url('../images/details_close.png') no-repeat center center;
+    
+}
+.dataTables_wrapper .dataTables_paginate{
+  float: unset;
+  
 }

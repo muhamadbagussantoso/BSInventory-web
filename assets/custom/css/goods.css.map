@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,oBAAqB;EACjB,KAAK,EAAE,KAAK",
+"mappings": "AAAA,oBAAqB,CACjB,KAAK,CAAE,KAAK,CAEhB,kBAAmB,CACf,UAAU,CAAE,4DAA4D,CACxE,MAAM,CAAE,OAAO,CAEnB,2BAA4B,CACxB,UAAU,CAAE,6DAA6D,CAG7E,wCAAwC,CACvC,KAAK,CAAE,KAAK",
 "sources": ["../sass/goods.scss"],
 "names": [],
 "file": "goods.css"

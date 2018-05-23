@@ -1,4 +1,2 @@
-div#goodsData_filter {
-  float: right; }
-
+div#goodsData_filter{float:right}td.details-control{background:url("../resources/details_open.png") no-repeat center center;cursor:pointer}tr.shown td.details-control{background:url("../resources/details_close.png") no-repeat center center}.dataTables_wrapper .dataTables_paginate{float:unset}
 /*# sourceMappingURL=goods.css.map */

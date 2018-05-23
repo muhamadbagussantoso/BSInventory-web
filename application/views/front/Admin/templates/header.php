@@ -14,13 +14,13 @@
 		http://localhost/kuliah/bspayroll/assets/charisma/bower_components/bootstrap/dist/css/bootstrap.min.css
 	-->
 	<link id="bs-css" href="<?php echo base_url('assets/charisma/css/bootstrap-cerulean.min.css')?>" rel="stylesheet">
-	<script src="<?php echo base_url('assets/charisma/bower_components/jquery/jquery.min.js') ?>"></script>
+
+	<script src="<?php echo base_url('assets/js/jquery-1.12.4.js') ?>"></script>
 	
     <style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/charisma/bower_components/fullcalendar/dist/fullcalendar.css')?>")</style>
 	<style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/charisma/bower_components/fullcalendar/dist/fullcalendar.print.css')?>")</style>
     <style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/charisma/bower_components/chosen/chosen.min.css')?>")</style>
 	<style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/charisma/bower_components/colorbox/example3/colorbox.css')?>")</style>
-    <style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/charisma/bower_components/responsive-tables/responsive-tables.css')?>")</style>
 	<style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/charisma/bower_components/bootstrap-tour/build/css/bootstrap-tour.min.css')?>")</style>
     
 	<style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/charisma/css/charisma-app.css')?>")</style>
@@ -35,6 +35,7 @@
     <style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/charisma/css/animate.min.css')?>")</style>
     <style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/custom/css/goods.css')?>")</style>
     <style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/css/global.css')?>")</style>
+    <style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/dataTables/jquery.dataTables.min.css')?>")</style>
 
 </head>
 <body>

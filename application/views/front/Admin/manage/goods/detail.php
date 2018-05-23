@@ -14,11 +14,11 @@
             </div>
             <div class="box-content">
                         <div class="form-group col-md-6">
-                            <label for="name">Nama Barang</label>
-                            <input type="text" class="form-control" id="nama" name="name" placeholder="Enter name">
+                            <label for="name">name Barang</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="supplier">Nama Supplier</label>
+                            <label for="supplier">name Supplier</label>
                             <input type="text" class="form-control" id="supplier" name="supplier" placeholder="Enter Supplier">
                         </div>
                         <div class="form-group col-md-6">
@@ -47,7 +47,7 @@
 <script type="text/javascript">
 
    $(document).ready(function() {
-       var name = $( "#nama" ),
+       var name = $( "#name" ),
            supplier = $( "#supplier" ),
            category = $( "#category" ),
     		   qty = $( "#qty" ),
@@ -69,7 +69,7 @@
 
                   $.ajax({
                    type: 'POST',
-                   url: 'http://localhost/BSInventory-web/Goods/saveGood',
+                   url: 'http://localhost/BSInventory-web/Goods/insertGood',
                    data: { ids: data },
                    success: function(data) { 
                        console.log (data);  

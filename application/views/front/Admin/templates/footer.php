@@ -26,7 +26,6 @@
 	<!-- notification plugin -->
 	<script src="<?php echo base_url('assets/charisma/js/jquery.noty.js') ?>"></script>
 	<!-- library for making tables responsive -->
-	<script src="<?php echo base_url('assets/charisma/bower_components/responsive-tables/responsive-tables.js') ?>"></script>
 	<!-- tour plugin -->
 	<script src="<?php echo base_url('assets/charisma/bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js') ?>"></script>
 	<!-- star rating plugin -->
