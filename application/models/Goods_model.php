@@ -48,7 +48,19 @@ class Goods_model extends CI_Model {
         $query = $this->db->query($sql) ;
         }
     }
+    public function getGoodsbyId($id)
+    {
+        $query = $this->db->get_where($this->table, array('id' => $id), 1);
+        
+        return  $query->result();
 
+    }
+
+    public function deleteGoods($id)
+    {
+        $this->db->delete($this->table, array('id' => $id)); 
+
+    }
 
 }
 ?>
