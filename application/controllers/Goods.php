@@ -69,6 +69,8 @@ class Goods extends CI_Controller{
     	if($this->role == 1){
              $this->Goods->deleteGoods($this->input->post('id'));
 
+             return true;
+
         }else{
             $this->load->view('front/User/dashboard_user',$this->data);
         }

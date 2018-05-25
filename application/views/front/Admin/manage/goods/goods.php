@@ -22,7 +22,7 @@
                     </thead>
                     <tbody>
                         <?php foreach ($goodsData as $goods):?>
-                            <tr>
+                            <tr id="<?php echo $goods->id; ?>">
                                 <td><?php echo $goods->name; ?></td>
                                 <td><?php echo $goods->supplier; ?></td>
                                 <td><?php echo $goods->category; ?></td>
@@ -61,12 +61,11 @@
           <h4 class="modal-title">Delete Goods</h4>
         </div>
         <div class="modal-body">
-            <p>some content</p>
-            <input type="text" name="bookId" id="bookId" value=""/>
+            <p>Are you sure. !!!</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-deleteGoods"  >Delete</button>
+          <button type="button" class="btn btn-deleteGoods" data-dismiss="modal" >Delete</button>
         </div>
       </div>
       
@@ -78,32 +77,34 @@
 
    $(document).ready(function() {
 
-        $(document).on("click", "#btn-delete", function () {
-             var myBookId = $(this).data('id');
-             $(".modal-body #bookId").val( myBookId );
 
-             $( ".btn-deleteGoods" ).attr( "data-id", myBookId );
+        var idGoods;
+        $(document).on("click", "#btn-delete", function () {
+            
+            idGoods = $(this).data('id');
+            localStorage.setItem("idGoods", idGoods);
+
+            $(".modal-body #bookId").val( idGoods );
+
+            $( ".btn-deleteGoods" ).attr( "data-id", idGoods );
 
             $('#modalConfirm').modal('show');
         });
 
         $(document).on("click", ".btn-deleteGoods", function () {
-             var id = $(this).data('id');
+             var id = localStorage.getItem("idGoods");
 
              if (id != '') {
 
-                $('#modalConfirm').modal('hide');
-                  $.ajax({
-                   type: 'POST',
-                   url: 'http://localhost/BSInventory-web/Goods/deleteGoods',
-                   data: { id: id },
-                   success: function(data) { 
-                       console.log (data);  
-                       $( ".alert-success " ).removeClass( "hide" );
-                       setTimeout(function(){ $(".alert-success").fadeToggle("slow", "linear")}, 2000);
-
-                     }
-                 });
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost/BSInventory-web/Goods/deleteGoods',
+                    data: { id: id }
+                }).done(function() {
+                    $('#'+id).remove();
+                }).fail(function() {
+                    alert( "error" );
+                });
              }else{
 
              }

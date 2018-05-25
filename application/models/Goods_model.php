@@ -58,8 +58,13 @@ class Goods_model extends CI_Model {
 
     public function deleteGoods($id)
     {
-        $this->db->delete($this->table, array('id' => $id)); 
-
+        $query = $this->db->delete($this->table, array('id' => $id)); 
+      
+        if ($query){
+                 return "success";
+        }else{
+                 return "failed";
+        }
     }
 
 }
