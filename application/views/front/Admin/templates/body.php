@@ -54,15 +54,10 @@
             <div>
 				<ul class="breadcrumb">
 					<li>
-						<a href="#"><?php echo $modules;?></a>
+						<a href="<?php echo base_url($modules);?>"><?=$modules;?></a>
 					</li>
-                    <li>
-                        <a href="#"><?php echo $page ;?></a>
-                    </li>
-                    <li>
-                        <a href="#"><?php $link = $_SERVER['PHP_SELF'];
-                                          $link_array = explode('/',$link);
-                                          echo $page = end($link_array); ?></a>
+                    <li disabled>
+                        <a href="#"><?=$page ;?></a>
                     </li>
 				</ul>
 			</div>

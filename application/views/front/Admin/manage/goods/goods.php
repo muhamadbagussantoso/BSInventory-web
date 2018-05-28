@@ -4,6 +4,7 @@
             <div class="box-header well" data-original-title="">
             <h2><i class="glyphicon glyphicon-th"></i> Daftar Barang</h2>
             <div class="box-icon">
+                <a href="<?php echo base_url("Goods/formGoods/add");?>" class="btn btn-round btn-default"><i class="glyphicon glyphicon-plus"></i></a>
                 <a href="#" class="btn btn-minimize btn-round btn-default"><i class="glyphicon glyphicon-chevron-up"></i></a>
             </div>
             </div>
@@ -22,6 +23,7 @@
                     </thead>
                     <tbody>
                         <?php foreach ($goodsData as $goods):?>
+                            
                             <tr id="<?php echo $goods->id; ?>">
                                 <td><?php echo $goods->name; ?></td>
                                 <td><?php echo $goods->supplier; ?></td>
@@ -31,10 +33,7 @@
                                 <td><?php echo 'Rp'.$goods->selling_price; ?></td>
                                 <td>
                                     <button class="btn-action" data-tooltip title="Detail">
-                                          <a href="<?php echo base_url("Goods/formGoods/". $goods->id."/detail");?>" class='action-list glyphicon glyphicon-eye-open'></a>
-                                    </button>
-                                    <button class="btn-action" data-tooltip title="Edit">
-                                         <a href="<?php echo site_url("Goods/formGoods/". $goods->id."/edit"); ?>" class='action-list glyphicon glyphicon-edit'></a>
+                                          <a href="<?php echo base_url("Goods/formGoods/detail/". $goods->id);?>" class='action-list glyphicon glyphicon-eye-open'></a>
                                     </button>
                                     <button class="btn-action" data-tooltip title="Remove">
                                           <a  id="btn-delete" class='action-list glyphicon glyphicon-trash' data-toggle="modal"  data-id="<?php echo $goods->id; ?>" href="#modalConfirm" ></a>

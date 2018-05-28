@@ -12,8 +12,8 @@ class Goods extends CI_Controller{
         $this->data = array(    
             'user'    => $getAccount,
             'title' => $titleHeader,
-            'modules'=> 'Barang',
-            'page' => 'Daftar Barang',
+            'modules'=> 'Goods',
+            'page' => 'List of Goods',
             'auth' => $this->afterAuth,
             'css' => 'goods.css',
             'goods' => 'active',
@@ -25,10 +25,10 @@ class Goods extends CI_Controller{
     }
     function index()
     {
-    	
+        
         if($this->role == 1){
 
-    		$this->data += [ "goodsData" => $this->GetGoods ];
+            $this->data += [ "goodsData" => $this->GetGoods ];
             $this->template->goods('goods',$this->data);
 
         }else{ //user
@@ -47,11 +47,12 @@ class Goods extends CI_Controller{
         }
     }
 
-    function insertGood()
+    function insertGoods()
     {
         if($this->role == 1){
             
             $getData = $this->input->post('ids');
+            var_dump($getData);die();
             $data = array(
                       'name'     => $getData[0],
                       'supplier' =>  $getData[1],
@@ -66,7 +67,7 @@ class Goods extends CI_Controller{
     function deleteGoods()
     {
 
-    	if($this->role == 1){
+        if($this->role == 1){
              $this->Goods->deleteGoods($this->input->post('id'));
 
              return true;
@@ -77,37 +78,74 @@ class Goods extends CI_Controller{
     }
     function getDetailGoods()
     {
-    	header('Content-type: text/javascript');
-		$data=  $this->Goods->getAll();
+        header('Content-type: text/javascript');
+        $data=  $this->Goods->getAll();
 
-		$json = json_encode(array('data' => $data), JSON_PRETTY_PRINT);
+        $json = json_encode(array('data' => $data), JSON_PRETTY_PRINT);
 
-		echo $json;
+        echo $json;
     }
     function formGoods($id)
     {
 
-    	if($this->role == 1){
+        if($this->role == 1 ){
 
-    		$this->data += [ "goodsData" => $this->Goods->getGoodsbyId($id) ];
+            $method = $this->uri->segment(3);
+            $id = $this->uri->segment(4);
 
-    		if ($this->uri->segment(4) =="edit") {
+            switch ($method) {
+                case 'detail' :
+                    $this->data += [ "goodsData" => $this->Goods->getGoodsbyId($id) ];
 
-    			$this->data += [ "method" => $this->uri->segment(4) ];
-    			$this->data += [ "action" =>  $this->uri->segment(4) ];
-    			
-    			$replacePage = array("page" => "Edit Goods");
-    			$data = array_replace($this->data,$replacePage);
+                    $this->data += [ "method" => $this->uri->segment(3) ];
+                    $this->data += [ "action" => $this->uri->segment(3) ];
+                    
+                    $replacePage = array("page" => "Detail Goods");
+                    $data = array_replace($this->data,$replacePage);
+                    // var_dump($id);die();
+
+                   $this->template->formGoods('formGoods',$data); 
+
+                  break;
+                case 'add' :
+
+                    $this->data += [ "method" => $this->uri->segment(4) ];
+                    $this->data += [ "goodsData" => "NULL"];
+                    $this->data += [ "goodsFields" =>$this->Goods->getFields() ];
+                    $this->data += [ "lengthGoodsData" =>count($this->data['goodsData']) ];
+
+                    // var_dump($this->data['lengthGoodsData']);die();
+                    
+                    
+                    $replacePage = array("page" => "Add Goods");
+                    $data = array_replace($this->data,$replacePage);
+
+                   $this->template->formGoods('formGoods',$data);
+
+                  break;
+                default:
+                  //what to do if the role is neither 'author' nor 'visitor'?
+                var_dump('insert');die();
+              }
 
 
-               $this->template->formGoods('formGoods',$data);
-    		}else{
 
-    			$replacePage = array("page" => "Detail Goods");
-    			$data = array_replace($this->data,$replacePage);
-    			$this->template->formGoods('formGoods',$data);
-    		}
+        }else{
+            $this->load->view('front/User/dashboard_user',$this->data);
+        }
+    }
 
+    function editGoods()
+    {
+
+        if($this->role == 1){
+
+            $getData = $this->input->post('id');
+            $data = array(
+                      'name'     => $getData[0],
+                      'supplier' =>  $getData[1],
+                      );
+            $this->Goods->editGoods($data);
 
         }else{
             $this->load->view('front/User/dashboard_user',$this->data);

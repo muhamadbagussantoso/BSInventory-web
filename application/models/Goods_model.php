@@ -67,5 +67,30 @@ class Goods_model extends CI_Model {
         }
     }
 
+    public function editGoods($data)
+    {
+        var_dump($data);die();
+        $query = $this->db->delete($this->table, array('id' => $id)); 
+      
+
+        $this->name    = $data['name'];
+        $this->supplier  =$data['supplier'];
+
+        $query = $this->db->update($this->table, $this, array('id' => $_POST['id']));
+
+        if ($query){
+                 return "success";
+        }else{
+                 return "failed";
+        }
+    }
+
+    public function getFields()
+    {
+        $result = $this->db->list_fields($this->table);
+
+        return $result;
+    }
+
 }
 ?>

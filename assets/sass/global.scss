@@ -29,6 +29,7 @@ a.action-list {
 $alphablack:rgba(0,0,0,0.9);
 
 
+
 [data-tooltip] {
   &:hover {
     &:before, &:after {
@@ -83,4 +84,14 @@ tr.shown td.details-control {
 .dataTables_wrapper .dataTables_paginate{
   float: unset;
   
+}
+.btn-actions {
+  padding: 15px;
+}
+.breadcrumb a {
+  text-decoration: none !important;
+}
+.breadcrumb > li:last-child a {
+    color: #555555!important;
+   
 }
