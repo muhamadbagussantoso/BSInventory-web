@@ -24,6 +24,7 @@ class Goods extends CI_Controller{
         $this->role = $this->session->userdata('role');
 
     }
+
     function index()
     {
         
@@ -33,6 +34,7 @@ class Goods extends CI_Controller{
             $this->template->goods('goods',$this->data);
 
         }else{ //user
+
             $this->load->view('front/User/dashboard_user',$this->data);
         }
     }
@@ -56,6 +58,12 @@ class Goods extends CI_Controller{
                           'id'     => $getData[0],
                           'name' =>  $getData[1],
                           'supplier' =>  $getData[2],
+                          'category'     => $getData[3],
+                          'type' =>  $getData[4],
+                          'qty' =>  $getData[5],
+                          'unit' =>  $getData[6],
+                          'purchase_price'     => $getData[7],
+                          'selling_price' =>  $getData[8]
                           );
 
             if ($getData[0] !="") {

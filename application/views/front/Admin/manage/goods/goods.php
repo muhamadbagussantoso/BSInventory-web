@@ -50,9 +50,9 @@
 </div>
 
   <!-- Modal Delete -->
-  <div class="modal fade" id="modalConfirm" role="dialog">
+<div class="modal fade" id="modalConfirm" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
@@ -69,15 +69,14 @@
       </div>
       
     </div>
-  </div>
+</div>
   
 
 <script type="text/javascript">
-
    $(document).ready(function() {
 
-
         var idGoods;
+
         $(document).on("click", "#btn-delete", function () {
             
             idGoods = $(this).data('id');
@@ -88,13 +87,14 @@
             $( ".btn-deleteGoods" ).attr( "data-id", idGoods );
 
             $('#modalConfirm').modal('show');
+
         });
 
         $(document).on("click", ".btn-deleteGoods", function () {
+
              var id = localStorage.getItem("idGoods");
 
              if (id != '') {
-
                 $.ajax({
                     type: 'POST',
                     url: 'http://localhost/BSInventory-web/Goods/deleteGoods',
@@ -109,42 +109,5 @@
              }
 
         });
-
-    
-       $('#goodsData tbody').on('click', 'td.details-control', function () {
-            var tr = $(this).closest('tr');
-            var row = table.row( tr );
-     
-            if ( row.child.isShown() ) {
-                // This row is already open - close it
-                row.child.hide();
-                tr.removeClass('shown');
-            }
-            else {
-                // Open this row
-                row.child( format(row.data()) ).show();
-                tr.addClass('shown');
-            }
-        } );
-
-
-       function format ( d ) {
-            // `d` is the original data object for the row
-            return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
-                '<tr>'+
-                    '<td>Full name:</td>'+
-                    '<td>'+d.name+'</td>'+
-                '</tr>'+
-                '<tr>'+
-                    '<td>Extension number:</td>'+
-                    '<td>'+d.extn+'</td>'+
-                '</tr>'+
-                '<tr>'+
-                    '<td>Extra info:</td>'+
-                    '<td>And any further details here (images etc)...</td>'+
-                '</tr>'+
-            '</table>';
-        }
-
     });
 </script>   

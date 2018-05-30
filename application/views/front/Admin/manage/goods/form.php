@@ -30,7 +30,7 @@
 
                         <div class="form-group col-md-6">
                           <label for="name">Nama Category</label>
-                          <input type="text" class="form-control" id="category" name="category" placeholder="Masukan nama kategori " value="<?=$goods->category;?>">
+                          <input type="numeric" class="form-control" id="category" name="category" placeholder="Masukan nama kategori " value="<?=$goods->category;?>">
                         </div>
 
                         <div class="form-group col-md-6">
@@ -78,27 +78,20 @@
 
    $(document).ready(function() {
 
-
       var url = window.location.pathname;
       var urlsplit = url.split("/");
       var action = urlsplit[urlsplit.length-1];
-
 
       if (action == 'edit') {
 
       }else if(action == 'add'){
 
         $( "#btn-edit" ).hide();
-        console.log('add')
-      }
-      else{
-        console.log('detail');
 
+      }else{
         $( ".form-control" ).attr( "disabled","disabled");
         $( "#btn-add" ).attr( "disabled","disabled");
       }
-
-
 
       $( "#btn-edit" ).button().click(function() {
         $( ".form-control" ).removeAttr( "disabled","disabled");
@@ -107,47 +100,48 @@
       });
   
       $( "#btn-add" ).button().click(function() {
-                    var id = $( "#id" ),
-        name = $( "#name" ),
-        supplier = $( "#supplier" ),
-        category = $( "#category" ),
-        qty = $( "#qty" ),
-        price = $( "#price" ),
-        price1 = $( "#price1" ),
-     
-        allFields = $( [] ).add(id).add(name).add(supplier);
-        console.log(name.val()  );
 
-              if (allFields.length > 0){
-                  data= [];
-                  for(i=0; i < allFields.length;i++){
-                    key = allFields[i].id;
-                    value = allFields[i].value;
-                    data.push(value);
-                  }
+          var id = $( "#id" ),
+          name = $( "#name" ),
+          supplier = $( "#supplier" ),
+          category = $( "#category" ),
+          type = $( "#type" ),
+          qty = $( "#qty" ),
+          unit = $( "#unit" ),
+          purchase_price = $( "#purchase_price" ),
+          selling_price = $( "#selling_price" ),
+       
+          allFields = $( [] ).add(id).add(name).add(supplier).add(category).add(type).add(qty).add(unit).add(purchase_price).add(selling_price);
 
-                  $.ajax({
-                   type: 'POST',
-                   url: 'http://localhost/BSInventory-web/Goods/insertGoods',
-                   data: { ids: data },
-                   success: function(data) { 
-                       console.log (data);  
-                       $( ".alert-success " ).removeClass( "hide" );
-                       setTimeout(function(){ $(".alert-success").fadeToggle("slow", "linear")}, 2000);
-                       $( ".form-control" ).attr( "disabled","disabled");
-                       $( "#btn-add" ).attr( "disabled","disabled");
-                       $( "#btn-edit" ).removeAttr( "disabled","disabled");
+          if (allFields.length > 0){
 
-                     }
-                 });
+              data= [];
 
-              }else{
-                  console.log('data tidak boleh kosong');
+              for(i=0; i < allFields.length;i++){
+                key = allFields[i].id;
+                value = allFields[i].value;
+                data.push(value);
               }
 
-              
+              console.log(data);
+              $.ajax({
+               type: 'POST',
+               url: 'http://localhost/BSInventory-web/Goods/insertGoods',
+               data: { ids: data },
+               success: function(data) { 
+                   console.log (data);  
+                   $( ".alert-success " ).removeClass( "hide" );
+                   setTimeout(function(){ $(".alert-success").fadeToggle("slow", "linear")}, 2000);
+                   $( ".form-control" ).attr( "disabled","disabled");
+                   $( "#btn-add" ).attr( "disabled","disabled");
+                   $( "#btn-edit" ).removeAttr( "disabled","disabled");
+
+                 }
+             });
+
+          }else{
+              console.log('data tidak boleh kosong');
+          }          
       });
-
-
   });
 </script>
