@@ -1,4 +1,3 @@
-<div class="ch-container">
     <div class="row">
         
         <!-- left menu starts -->

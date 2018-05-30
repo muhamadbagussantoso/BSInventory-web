@@ -1,7 +1,9 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Goods extends CI_Controller{
     function __construct(){
+
         parent::__construct();
+
         $this->auth->cek_auth(); //ngambil auth dari library
         $this->afterAuth = $this->session->userdata('logged_in');
 
@@ -21,7 +23,6 @@ class Goods extends CI_Controller{
 
         $this->role = $this->session->userdata('role');
 
-
     }
     function index()
     {
@@ -38,8 +39,6 @@ class Goods extends CI_Controller{
 
     function detail()
     {
- 
-
         if($this->role == 1){
             $this->template->goodsDetail('goodsDetail',$this->data);
         }else{ //user
@@ -52,22 +51,31 @@ class Goods extends CI_Controller{
         if($this->role == 1){
             
             $getData = $this->input->post('ids');
-            var_dump($getData);die();
-            $data = array(
-                      'name'     => $getData[0],
-                      'supplier' =>  $getData[1],
-                      );
-            $this->Goods->insertGoods($data);
 
+            $data = array(
+                          'id'     => $getData[0],
+                          'name' =>  $getData[1],
+                          'supplier' =>  $getData[2],
+                          );
+
+            if ($getData[0] !="") {
+
+                $this->Goods->editGoods($data);
+
+            }else{
+
+                $this->Goods->insertGoods($data);
+            }
         }else{
+
             $this->load->view('front/User/dashboard_user',$this->data);
         }
     }
 
     function deleteGoods()
     {
-
         if($this->role == 1){
+
              $this->Goods->deleteGoods($this->input->post('id'));
 
              return true;
@@ -76,6 +84,7 @@ class Goods extends CI_Controller{
             $this->load->view('front/User/dashboard_user',$this->data);
         }
     }
+
     function getDetailGoods()
     {
         header('Content-type: text/javascript');
@@ -85,9 +94,9 @@ class Goods extends CI_Controller{
 
         echo $json;
     }
+
     function formGoods($id)
     {
-
         if($this->role == 1 ){
 
             $method = $this->uri->segment(3);
@@ -96,26 +105,32 @@ class Goods extends CI_Controller{
             switch ($method) {
                 case 'detail' :
                     $this->data += [ "goodsData" => $this->Goods->getGoodsbyId($id) ];
-
+           
                     $this->data += [ "method" => $this->uri->segment(3) ];
                     $this->data += [ "action" => $this->uri->segment(3) ];
                     
                     $replacePage = array("page" => "Detail Goods");
                     $data = array_replace($this->data,$replacePage);
-                    // var_dump($id);die();
 
-                   $this->template->formGoods('formGoods',$data); 
+                    $this->template->formGoods('formGoods',$data); 
 
                   break;
                 case 'add' :
 
-                    $this->data += [ "method" => $this->uri->segment(4) ];
-                    $this->data += [ "goodsData" => "NULL"];
-                    $this->data += [ "goodsFields" =>$this->Goods->getFields() ];
-                    $this->data += [ "lengthGoodsData" =>count($this->data['goodsData']) ];
+                    $goodsData = new stdClass;
+                    $objGoodsData = [];
 
-                    // var_dump($this->data['lengthGoodsData']);die();
-                    
+                    $this->data += [ "method" => $this->uri->segment(4) ];
+                    $this->data += [ "goodsFields" =>$this->Goods->getFields() ];
+
+
+                    foreach ($this->data['goodsFields'] as $value) {
+                        $a = $goodsData->$value = "";
+                        $objGoodsData += [0 =>$goodsData];
+                    }
+
+                    $this->data += [ "goodsData" => $objGoodsData ];
+                    $this->data += [ "lengthGoodsData" =>count($this->data['goodsData']) ];
                     
                     $replacePage = array("page" => "Add Goods");
                     $data = array_replace($this->data,$replacePage);
@@ -125,12 +140,9 @@ class Goods extends CI_Controller{
                   break;
                 default:
                   //what to do if the role is neither 'author' nor 'visitor'?
-                var_dump('insert');die();
               }
-
-
-
         }else{
+
             $this->load->view('front/User/dashboard_user',$this->data);
         }
     }
@@ -148,6 +160,7 @@ class Goods extends CI_Controller{
             $this->Goods->editGoods($data);
 
         }else{
+
             $this->load->view('front/User/dashboard_user',$this->data);
         }
     }

@@ -69,14 +69,15 @@ class Goods_model extends CI_Model {
 
     public function editGoods($data)
     {
-        var_dump($data);die();
-        $query = $this->db->delete($this->table, array('id' => $id)); 
-      
 
-        $this->name    = $data['name'];
-        $this->supplier  =$data['supplier'];
+        $data = array(
+                'id' => $data['id'],
+                'name' =>$data['name'],
+                'supplier' => $data['supplier']
+        );
 
-        $query = $this->db->update($this->table, $this, array('id' => $_POST['id']));
+        $this->db->where('id', $data['id']);
+        $query = $this->db->update($this->table, $data);
 
         if ($query){
                  return "success";
