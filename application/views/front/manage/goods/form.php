@@ -12,8 +12,6 @@
                 <a href="#" class="btn btn-minimize btn-round btn-default"><i class="glyphicon glyphicon-chevron-up"></i></a>
             </div>
             </div>
-           
-
             <div class="box-content">
                     <?php foreach ($goodsData as $goods):?>
                         <div class="form-group col-md-6">

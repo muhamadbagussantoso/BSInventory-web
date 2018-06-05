@@ -10,4 +10,5 @@ $autoload['config'] = array();
 
 $autoload['language'] = array();
 
-$autoload['model'] = array('auth_model' => 'ModelAuth', 'goods_model' => 'Goods');
+$autoload['model'] = array('auth_model' => 'ModelAuth', 'goods_model' => 'Goods','Modules_model' => 'Modules',
+						   'Lookup_model' => 'Lookup');

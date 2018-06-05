@@ -30,7 +30,7 @@ class Goods_model extends CI_Model {
 
     public function insertGoods($data)
     {
-        
+         var_dump($data);die();
          $this->db->insert('goods', $data);
     }
 
@@ -57,6 +57,7 @@ class Goods_model extends CI_Model {
     public function editGoods($data)
     {
 
+       // var_dump($data);die();
         $this->db->where('id', $data['id']);
         $query = $this->db->update($this->table, $data);
 

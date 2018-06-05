@@ -9,6 +9,8 @@ class Goods extends CI_Controller{
 
         $getAccount = $this->ModelAuth->ambil_user($this->session->userdata('uname'));
         $this->GetGoods = $this->Goods->getAll();
+        
+        $this->menu = array('goods' => 'active' ,'procurement' => '','lookup' => '');
 
         $titleHeader = 'Beranda | BSInventory';
         $this->data = array(    
@@ -18,9 +20,9 @@ class Goods extends CI_Controller{
             'page' => 'List of Goods',
             'auth' => $this->afterAuth,
             'css' => 'goods.css',
-            'goods' => 'active',
+            'menu' => $this->menu,
             );
-
+        // var_dump($this->data);die();
         $this->role = $this->session->userdata('role');
 
     }
@@ -67,7 +69,6 @@ class Goods extends CI_Controller{
                           );
 
             if ($getData[0] !="") {
-
                 $this->Goods->editGoods($data);
 
             }else{

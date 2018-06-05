@@ -20,7 +20,7 @@ class Template
                 $this->data = $data[$this->fileTemplates[$i]] = $this->_ci->load->view($this->adminTemplate."/".$this->fileTemplates[$i],$data,true);
                 };
 
-           $data['contens']        = $this->_ci->load->view('front/admin/dashboard_admin',$data,true);
+           $data['contens']        = $this->_ci->load->view('front/dashboard_admin',$data,true);
            
            $this->_ci->load->view('index',$data);
         }
@@ -39,6 +39,26 @@ class Template
                 $this->data = $data[$this->fileTemplates[$i]] = $this->_ci->load->view($this->adminTemplate."/".$this->fileTemplates[$i],$data,true);
                 };
            $data['contens'] = $this->_ci->load->view($this->adminDir."/manage/goods/form",$data,true);
+           
+           $this->_ci->load->view('index',$data);
+        }
+
+        function procurement($templates,$data = null)
+        {
+           for ($i = 0; $i <= 3; $i++){
+                $this->data = $data[$this->fileTemplates[$i]] = $this->_ci->load->view($this->adminTemplate."/".$this->fileTemplates[$i],$data,true);
+                };
+           $data['contens'] = $this->_ci->load->view($this->adminDir."/manage/goods/procurement_of_goods",$data,true);
+           
+           $this->_ci->load->view('index',$data);
+        }
+        
+        function lookup($templates,$data = null)
+        {
+           for ($i = 0; $i <= 3; $i++){
+                $this->data = $data[$this->fileTemplates[$i]] = $this->_ci->load->view($this->adminTemplate."/".$this->fileTemplates[$i],$data,true);
+                };
+           $data['contens'] = $this->_ci->load->view($this->adminDir."/setup/lookup/lookup",$data,true);
            
            $this->_ci->load->view('index',$data);
         }

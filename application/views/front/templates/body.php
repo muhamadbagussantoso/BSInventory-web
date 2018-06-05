@@ -1,4 +1,4 @@
-    <div class="row">
+     <div class="row">
         
         <!-- left menu starts -->
         <div class="col-sm-2 col-lg-2">
@@ -11,18 +11,17 @@
                         <li class="nav-header">Main</li>
                         <li><a class="ajax-link" href="<?php echo base_url();?>"><i class="glyphicon glyphicon-home"></i><span> Dashboard</span></a>
                         </li>
-						<li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-hdd"></i><span> Pengelolaan</span></a>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-hdd"></i><span> Manage</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li class="<?php echo $goods;?>"><a href="<?php echo base_url('Goods');?>" class="glyphicon glyphicon-briefcase"> Barang </a></li>
-                                <li><a href="#" class="glyphicon glyphicon-file"> Invoice</a></li>
+                                <li class="<?php echo $menu['goods'];?>"><a href="<?php echo base_url('Goods');?>" class="glyphicon glyphicon-briefcase"> Goods </a></li>
+                                <li class="<?php echo $menu['procurement']?>"><a href="<?php echo base_url('Procurement');?>" class="glyphicon glyphicon-file"> Procurement of Goods</a></li>
                             </ul>
                         </li>
 						<li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-wrench"></i><span> Pangaturan</span></a>
+                            <a href="#"><i class="glyphicon glyphicon-hdd"></i><span> Setup</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li ><a href="#" class="glyphicon glyphicon-user"> Karyawan</a></li>
-                                <li><a href="#" class="glyphicon glyphicon-list-alt"> Permintaan</a></li>
+                                <li class="<?php echo $menu['lookup'];?>"><a href="<?php echo base_url('Lookup');?>" class="glyphicon glyphicon-briefcase"> Lookup Value </a></li>
                             </ul>
                         </li>
 						<li class="accordion"><a class="ajax-link" href="<?php echo base_url('Report');?>"><i class="glyphicon glyphicon-book"></i><span> Laporan</span></a>
