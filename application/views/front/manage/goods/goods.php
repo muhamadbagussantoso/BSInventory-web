@@ -4,9 +4,9 @@
             <div class="box-header well" data-original-title="">
             <h2><i class="glyphicon glyphicon-th"></i> Daftar Barang</h2>
             <div class="box-icon">
-                <a href="<?php echo base_url("Goods/formGoods/add");?>" class="btn btn-round btn-default"><i class="glyphicon glyphicon-plus"></i></a>
-                <a href="#" class="btn btn-minimize btn-round btn-default"><i class="glyphicon glyphicon-chevron-up"></i></a>
-                <a href="#" class="btn refresh btn-round btn-default"><i class="glyphicon glyphicon-refresh"></i></a>
+                <a href="<?php echo base_url("Goods/formGoods/add");?>" class="btn btn-round btn-default" data-toggle="tooltip" title="Tambah Barang"><i class="glyphicon glyphicon-plus"></i></a>
+                <a href="#" class="btn refresh btn-round btn-default" data-toggle="tooltip" title="Refresh"><i class="glyphicon glyphicon-refresh"></i></a>
+                <a href="#" class="btn btn-minimize btn-round btn-default" data-toggle="tooltip" title=""><i class="glyphicon glyphicon-chevron-up"></i></a>
             </div>
             </div>
             <div class="box-content">
@@ -114,10 +114,10 @@
                 "loadingRecords": "Please wait - loading...",
                 "infoFiltered": " - Penyaringan dari _MAX_ data",
                 "info": "Tampilan halaman _PAGE_ dari _PAGES_",
-                "zeroRecords": "Tidak ada data yang tersedia",
+                "zeroRecords": "Data tidak tersedia",
                 "loadingRecords": "Please wait - loading...",
-                "infoEmpty": "Tidak ada data yang tersedia",
-                "emptyTable": "Tidak ada data yang tersedia",
+                "infoEmpty": "Data tidak tersedia",
+                "emptyTable": "Data tidak tersedia",
                 "paginate": {
                     "next": "Selanjutnnya",
                     "previous": "Sebelumnnya",
@@ -199,6 +199,8 @@
                 }
             }
         } );
+
+        $('[data-toggle="tooltip"]').tooltip();  
      
     });
 </script>   

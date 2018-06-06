@@ -81,9 +81,14 @@ tr.shown td.details-control {
     background: url('../images/details_close.png') no-repeat center center;
     
 }
+div#tableData_info {
+    display: block;
+    float: unset;
+}
 .dataTables_wrapper .dataTables_paginate{
+  display: block;
   float: unset;
-  
+  text-align: center;
 }
 .btn-actions {
   padding: 15px;

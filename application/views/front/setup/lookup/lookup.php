@@ -56,10 +56,10 @@
         "loadingRecords": "Please wait - loading...",
         "infoFiltered": " - Penyaringan dari _MAX_ data",
         "info": "Tampilan halaman _PAGE_ dari _PAGES_",
-        "zeroRecords": "Tidak ada data yang tersedia",
+        "zeroRecords": "Data tidak tersedia",
         "loadingRecords": "Please wait - loading...",
-        "infoEmpty": "Tidak ada data yang tersedia",
-        "emptyTable": "Tidak ada data yang tersedia",
+        "infoEmpty": "Data tidak tersedia",
+        "emptyTable": "Data tidak tersedia",
         "paginate": {
             "next": "Selanjutnnya",
             "previous": "Sebelumnnya",
