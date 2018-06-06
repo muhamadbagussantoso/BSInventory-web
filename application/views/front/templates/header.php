@@ -33,8 +33,8 @@
     <style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/charisma/css/jquery.iphone.toggle.css')?>")</style>
     <style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/charisma/css/uploadify.css')?>")</style>
     <style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/charisma/css/animate.min.css')?>")</style>
-    <style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/css/global.css')?>")</style>
     <style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/css/jquery.dataTables.min.css')?>")</style>
+    <style type="text/css" rel="stylesheet">@import url("<?php echo base_url('assets/css/global.css')?>")</style>
 
 </head>
 <body>

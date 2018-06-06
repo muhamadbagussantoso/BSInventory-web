@@ -9,7 +9,7 @@
             </div>
             </div>
             <div class="box-content">
-                <table id="dataTable" class="display" style="width:100%">
+                <table id="tableData" class="display" style="width:100%">
                     <thead>
                         <tr>
                             <th></th>
@@ -39,7 +39,35 @@
 
     $(document).ready(function() {
 
-        $('#dataTable').DataTable();
+       $('#tableData').DataTable( {
+    "language": {     
+        "lengthMenu": "Tampikan <select>"+
+        "<option value=5>5</option>"+
+        "<option value=10>10</option>"+
+        "<option value=20>20</option>"+
+        "<option value=30>30</option>"+
+        "<option value=40>40</option>"+
+        "<option value=50>50</option>"+
+        "<option value=100>100</option>"+
+        "<option value=-1>--Semua--</option>"+
+        "</select> Data",
+        "search": "Cari:",
+        "info": "Tampilan halaman _PAGE_ dari _PAGES_",
+        "loadingRecords": "Please wait - loading...",
+        "infoFiltered": " - Penyaringan dari _MAX_ data",
+        "info": "Tampilan halaman _PAGE_ dari _PAGES_",
+        "zeroRecords": "Tidak ada data yang tersedia",
+        "loadingRecords": "Please wait - loading...",
+        "infoEmpty": "Tidak ada data yang tersedia",
+        "emptyTable": "Tidak ada data yang tersedia",
+        "paginate": {
+            "next": "Selanjutnnya",
+            "previous": "Sebelumnnya",
+            "first": "Halaman pertama"
+            }
+        },
+    "order": [[1, 'asc']]
+} );
 
     });
 </script>   

@@ -10,7 +10,7 @@
             </div>
             </div>
             <div class="box-content">
-                <table id="goodsData" class="display" >
+                <table id="tableData" class="display table table-bordered" >
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -19,7 +19,7 @@
                             <th>Qty</th>
                             <th>Purchase Price </th>
                             <th>Selling Price</th>
-                            <th>d</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                      <tfoot>
@@ -74,14 +74,14 @@
             href = '<?php echo base_url();?>'+controllerDetail;
 
             return  "<div class='col-md-10'>a</div>"+
-                    "<div class='col-md-2'>"+
+                    "<div class='col-md-2 btn-action'>"+
                     '<a href='+href+' class="action-list glyphicon glyphicon-eye-open"></a>'+
                     '<a  id="btn-delete" class="action-list glyphicon glyphicon-trash" data-toggle="modal" data-id="'+id+'" href="#modalConfirm" ></a>'+
                     "</div>";
         }   
         
 
-        dt = $('#goodsData').DataTable( {
+        dt = $('#tableData').DataTable( {
             "ajax": "<?php echo site_url("Goods/getDetailGoods");?>",
             "columns": [
                 { "data": "name" },
@@ -98,6 +98,32 @@
 
                 },
             ],
+            "language": {     
+                "lengthMenu": "Tampikan <select>"+
+                "<option value=5>5</option>"+
+                "<option value=10>10</option>"+
+                "<option value=20>20</option>"+
+                "<option value=30>30</option>"+
+                "<option value=40>40</option>"+
+                "<option value=50>50</option>"+
+                "<option value=100>100</option>"+
+                "<option value=-1>--Semua--</option>"+
+                "</select> Data",
+                "search": "Cari:",
+                "info": "Tampilan halaman _PAGE_ dari _PAGES_",
+                "loadingRecords": "Please wait - loading...",
+                "infoFiltered": " - Penyaringan dari _MAX_ data",
+                "info": "Tampilan halaman _PAGE_ dari _PAGES_",
+                "zeroRecords": "Tidak ada data yang tersedia",
+                "loadingRecords": "Please wait - loading...",
+                "infoEmpty": "Tidak ada data yang tersedia",
+                "emptyTable": "Tidak ada data yang tersedia",
+                "paginate": {
+                    "next": "Selanjutnnya",
+                    "previous": "Sebelumnnya",
+                    "first": "Halaman pertama"
+                    }
+                },
             "order": [[1, 'asc']]
         } );
 
@@ -149,7 +175,7 @@
         
          var detailRows = [];
  
-        $('#goodsData tbody').on( 'click', 'tr td.details-control', function () {
+        $('#tableData tbody').on( 'click', 'tr td.details-control', function () {
 
             var tr = $(this).closest('tr');
             var row = dt.row( tr );

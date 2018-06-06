@@ -41,6 +41,7 @@
 	<!-- application script for Charisma demo -->
 	<script src="<?php echo base_url('assets/js/jquery.dataTables.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/charisma/js/charisma.js') ?>"></script>
+	<script src="<?php echo base_url('assets/js/global.js') ?>"></script>
 
 </body>
 </html>
