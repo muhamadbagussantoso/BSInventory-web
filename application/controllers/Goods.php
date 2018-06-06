@@ -174,4 +174,10 @@ class Goods extends CI_Controller{
         }
     }
 
+    public function dataTable(){
+
+        var_dump('s');die();
+
+    }
+
 }

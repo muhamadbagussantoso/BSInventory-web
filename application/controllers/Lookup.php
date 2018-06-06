@@ -7,7 +7,7 @@ class Lookup extends CI_Controller{
         $this->afterAuth = $this->session->userdata('logged_in');
 
         $getAccount = $this->ModelAuth->ambil_user($this->session->userdata('uname'));
-        $this->getLookupType = $this->Lookup->getLookupType();
+        $this->getLookupType = $this->Lookup->getLookupValue();
         
         $this->menu = array('goods' => '' ,'procurement' => '','lookup' => 'active');
 
@@ -42,7 +42,8 @@ class Lookup extends CI_Controller{
 
     public function LookupValue()
     {
-        $this->GetModules = $this->Modules->getAll('manage');
-        var_dump( $this->GetModules);die();
+
+        $this->GetModules = $this->Lookup->getLookupValue();
+        return $this->GetModules;
     }
 }

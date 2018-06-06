@@ -9,6 +9,7 @@
     </footer>
 
 </div><!--/.fluid-container-->
+
 	<script src="<?php echo base_url('assets/charisma/bower_components/bootstrap/dist/js/bootstrap.min.js') ?>"></script>
 
 	<!-- library for cookie management -->
@@ -17,7 +18,6 @@
 	<script src="<?php echo base_url('assets/charisma/bower_components/moment/min/moment.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/charisma/bower_components/fullcalendar/dist/fullcalendar.min.js') ?>"></script>
 	<!-- data table plugin -->
-	<script src="<?php echo base_url('assets/charisma/js/jquery.dataTables.min.js') ?>"></script>
 
 	<!-- select or dropdown enhancer -->
 	<script src="<?php echo base_url('assets/charisma/bower_components/chosen/chosen.jquery.min.js') ?>"></script>
@@ -39,6 +39,8 @@
 	<!-- history.js for cross-browser state change on ajax -->
 	<script src="<?php echo base_url('assets/charisma/js/jquery.history.js') ?>"></script>
 	<!-- application script for Charisma demo -->
+	<script src="<?php echo base_url('assets/js/jquery.dataTables.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/charisma/js/charisma.js') ?>"></script>
+
 </body>
 </html>

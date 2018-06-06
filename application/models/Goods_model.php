@@ -75,5 +75,14 @@ class Goods_model extends CI_Model {
         return $result;
     }
 
+    public function dataTable(){
+        
+        $query = $this->db->get($this->table);
+        $json = json_encode(array('data' => $query->result()), JSON_PRETTY_PRINT);
+
+
+        return $json;
+    }
+
 }
 ?>

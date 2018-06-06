@@ -9,26 +9,26 @@
             </div>
             </div>
             <div class="box-content">
-                <table id="goodsData" class="table table-striped table-bordered responsive">
+                <table id="dataTable" class="display" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Type</th>
-                            <th>Value</th>
-                            <th>Description</th>
                             <th></th>
+                            <th>First name</th>
+                            <th>Last name</th>
+                            <th>Position</th>
+                            <th>Office</th>
                         </tr>
                     </thead>
-  
-                     <tbody>
-                        <?php foreach ($lookupData as $goods):?>
-                            
-                            <tr id="<?php echo $goods->type_code; ?>">
-                                <td><?php echo $goods->type_code; ?></td>
-
-                            </tr>
-                        <?php  endforeach?>
-                    </tbody>
-                </table>
+                    <tfoot>
+                        <tr>
+                            <th></th>
+                            <th>First name</th>
+                            <th>Last name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                        </tr>
+                    </tfoot>
+                </table
             </div>
         </div>
     </div>
@@ -37,4 +37,9 @@
 
 <script type="text/javascript">
 
+    $(document).ready(function() {
+
+        $('#dataTable').DataTable();
+
+    });
 </script>   

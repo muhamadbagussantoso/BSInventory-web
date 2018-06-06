@@ -13,14 +13,14 @@ class Lookup_model extends CI_Model {
         $this->b = "sys_lookup_values";
     }
 
-    public function getLookupType()
+    public function getLookupValue()
     {
 
     	$query = $this->db->get($this->a);
-        // $json = json_encode($query->result(), JSON_PRETTY_PRINT);
+        $json = json_encode(array('data' => $query->result()), JSON_PRETTY_PRINT);
 
 
-        return $query->result();
+        return $json;
     }
 }
 ?>
