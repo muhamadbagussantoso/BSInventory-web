@@ -14,14 +14,28 @@
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-hdd"></i><span> Manage</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li class="<?php echo $menu['goods'];?>"><a href="<?php echo base_url('Goods');?>" class="glyphicon glyphicon-briefcase"> Goods </a></li>
-                                <li class="<?php echo $menu['procurement']?>"><a href="<?php echo base_url('Procurement');?>" class="glyphicon glyphicon-file"> Procurement of Goods</a></li>
+                                <li class="<?php echo $menu['goods'];?>">
+                                    <a href="<?php echo base_url('Goods');?>"> 
+                                        <span class="glyphicon glyphicon-briefcase"></span>
+                                        <span>Goods</span> </a>
+                                </li>
+                                <li class="<?php echo $menu['procurement']?>">
+                                    <a href="<?php echo base_url('Procurement');?>" > 
+                                        <span class="glyphicon glyphicon-file"></span>
+                                        <span>Procurement of Goods</span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 						<li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-hdd"></i><span> Setup</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li class="<?php echo $menu['lookup'];?>"><a href="<?php echo base_url('Lookup');?>" class="glyphicon glyphicon-briefcase"> Lookup Value </a></li>
+                                <li class="<?php echo $menu['lookup'];?>">
+                                    <a href="<?php echo base_url('Lookup');?>"> 
+                                        <span class="glyphicon glyphicon-briefcase"></span>
+                                        <span>Lookup Value</span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 						<li class="accordion"><a class="ajax-link" href="<?php echo base_url('Report');?>"><i class="glyphicon glyphicon-book"></i><span> Laporan</span></a>

@@ -8,6 +8,8 @@ class Dashboard extends CI_Controller{
 		$getAccount = $this->ModelAuth->ambil_user($this->session->userdata('uname'));
 		$GetGoods = $this->Goods->getAll();
 
+        
+        $this->menu = array('goods' => '' ,'procurement' => '','lookup' => '');
 		$titleHeader = 'Beranda | BSInventory';
 		$this->data = array(	
 			'user'	=> $getAccount,
@@ -16,7 +18,7 @@ class Dashboard extends CI_Controller{
 			'page' => '',
 			'auth' => $this->afterAuth,
 			'css' => 'goods.css',
-			'goods' => '',
+			'menu' => $this->menu,
 			);
 
 		$this->role = $this->session->userdata('role');
