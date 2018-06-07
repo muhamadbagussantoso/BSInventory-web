@@ -67,8 +67,12 @@ $alphablack:rgba(0,0,0,0.9);
     margin: 0px;
     border: none;
 }
-button, input, optgroup, select, textarea{
+button, input, optgroup, select{
   padding: 5px;
+}
+textarea {
+  padding: 5px !important;
+  min-height: 100px !important;
 }
 div#goodsData_filter {
     float: right;
@@ -178,8 +182,12 @@ select {
 table.dataTable, table.dataTable th, table.dataTable td{
   font-size: inherit !important;
 }
+  th {
+    padding-left: 8px !important;
+}
 th.details-control.sorting_disabled {
     width: 45px !important;
     text-align : center;
     color  :#2fa4e7 ;
+    padding: 18px !important;
 }

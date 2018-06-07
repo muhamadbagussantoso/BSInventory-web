@@ -30,8 +30,20 @@ class Goods_model extends CI_Model {
 
     public function insertGoods($data)
     {
-         var_dump($data);die();
          $this->db->insert('goods', $data);
+    }
+
+    public function editGoods($data)
+    {
+
+        $this->db->where('id', $data['id']);
+        $query = $this->db->update($this->table, $data);
+
+        if ($query){
+                 return "success";
+        }else{
+                 return "failed";
+        }
     }
 
     public function getGoodsbyId($id)
@@ -47,20 +59,6 @@ class Goods_model extends CI_Model {
     {
         $query = $this->db->delete($this->table, array('id' => $id)); 
       
-        if ($query){
-                 return "success";
-        }else{
-                 return "failed";
-        }
-    }
-
-    public function editGoods($data)
-    {
-
-       // var_dump($data);die();
-        $this->db->where('id', $data['id']);
-        $query = $this->db->update($this->table, $data);
-
         if ($query){
                  return "success";
         }else{

@@ -15,8 +15,8 @@ class Lookup extends CI_Controller{
         $this->data = array(    
             'user'    => $getAccount,
             'title' => $titleHeader,
-            'modules'=> 'Lookup',
-            'page' => 'Lookup Value',
+            'modules'=> 'Kategori',
+            'page' => 'Daftar Kategori',
             'auth' => $this->afterAuth,
             'css' => 'lookup.css',
             'menu' => $this->menu,
@@ -42,8 +42,26 @@ class Lookup extends CI_Controller{
 
     public function LookupValue()
     {
+        header('Content-type: text/javascript');
+        $data=  $this->Lookup->getLookupValue();
 
-        $this->GetModules = $this->Lookup->getLookupValue();
-        return $this->GetModules;
+        $json = json_encode(array('data' => $data), JSON_PRETTY_PRINT);
+
+        echo $json;
+    }
+
+
+    public function insertLookupType()
+    {
+         $getData = $this->input->post('data');
+
+        $data = array(
+                      'type_code'     => $getData[0],
+                      'type_title' =>  $getData[1],
+                      'type_description ' =>  $getData[2]
+                      );
+
+        $this->Lookup->insertLookupType($data);
+
     }
 }
